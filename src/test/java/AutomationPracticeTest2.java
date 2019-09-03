@@ -7,17 +7,13 @@ public class AutomationPracticeTest2 {
     private final By DRESSES = By.xpath(".//div[@class = 'product-container']");
     private final By ORANGE_FILTER = By.xpath(".//input[@id = 'layered_id_attribute_group_13']");
     private final By PRICE = By.xpath(".//span[@id='our_price_display']");
-    private BaseFunc baseFunc;
+    private BaseFunc baseFunc = new BaseFunc();
     private HomePage homePage;
     private DressesPage dressesPage;
     private CartPage cartPage;
     private String URL = "http://automationpractice.com/index.php";
     private String orangeColor;
     private double price = 0;
-
-    public AutomationPracticeTest2(BaseFunc baseFunc) {
-        this.baseFunc = baseFunc;
-    }
 
     @Test
     public void test() {
