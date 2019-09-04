@@ -34,7 +34,7 @@ public class AutomationPracticeTest2 {
         }
         dressesPage.pushCart();
         cartPage = new CartPage(baseFunc);
-        Assertions.assertEquals(price, cartPage.getTotalProductPrice(), "Price is calculated wrong!");
+        cartPage.checkCartPriceCalculation(price, cartPage.getTotalProductPrice());
         baseFunc.closeBrowser();
     }
 
