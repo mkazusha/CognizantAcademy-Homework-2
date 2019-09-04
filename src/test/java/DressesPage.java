@@ -16,6 +16,9 @@ public class DressesPage {
     private final By ADD_TO_CART = By.xpath(".//button[@type='submit']");
     private final By CART = By.xpath(".//b[contains(text(), 'Cart')]");
     private final By CONTINUE_SHOPPING_BTN = By.xpath(".//i[@class='icon-chevron-left left']");
+    private final By DRESSES = By.xpath(".//div[@class = 'product-container']");
+    private final By COLORS = By.xpath(".//a[@class = 'color_pick']");
+    private final By PRICE = By.xpath(".//span[@id='our_price_display']");
     int match = 0;
     Random rand = new Random();
 
@@ -83,5 +86,19 @@ public class DressesPage {
         basefunc.getElement(CONTINUE_SHOPPING_BTN).click();
     }
 
+    public List<WebElement> getFilteredDresses() {
+        return basefunc.getAllElements(DRESSES);
+    }
 
+    public List<WebElement> getColorsOfFilteredDresses() {
+        return basefunc.getAllElements(COLORS);
+    }
+
+    public String getOrangeColor() {
+        return basefunc.getElement(ORANGE_FILTER).getAttribute("style");
+    }
+
+    public double getDressPrice() {
+        return basefunc.getPrice(PRICE);
+    }
 }
