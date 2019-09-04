@@ -46,9 +46,6 @@ public class DressesPage {
         return colorToCheck.equals(color.getAttribute("style"));
     }
 
-    public String getColor(By locator) {
-        return basefunc.getElement(locator).getAttribute("style");
-    }
 
     public void pushRandomDress(List<WebElement> dresses) {
         dresses.get(rand.nextInt(dresses.size())).findElement(QUICK_VIEW_BTN).click();
