@@ -19,6 +19,11 @@ public class DressesPage {
     private final By DRESSES = By.xpath(".//div[@class = 'product-container']");
     private final By COLORS = By.xpath(".//a[@class = 'color_pick']");
     private final By PRICE = By.xpath(".//span[@id='our_price_display']");
+    private final By LOGO = By.xpath(".//img[@class = 'logo img-responsive']");
+    private final By SEARCH = By.xpath(".//form[@id='searchbox']");
+    private final By CATALOG_FILTERS = By.xpath(".//div[@id='layered_block_left']");
+    private final By HEADER = By.xpath(".//div[@class='header-container']");
+    private final By FOOTER = By.xpath(".//footer[@id='footer']");
     int match = 0;
     Random rand = new Random();
 
@@ -29,6 +34,12 @@ public class DressesPage {
         this.basefunc = baseFunc;
         Assertions.assertEquals(baseFunc.getElement(BANNER_NAME).getText(), bannerName, "Wrong Banner name");
         Assertions.assertFalse(baseFunc.isElementPresent(BANNER));
+        Assertions.assertFalse(baseFunc.isElementPresent(LOGO), "Logo is not present.");
+        Assertions.assertFalse(baseFunc.isElementPresent(SEARCH), "Search is missing.");
+        Assertions.assertFalse(baseFunc.isElementPresent(CART), "Cart is missing.");
+        Assertions.assertFalse(baseFunc.isElementPresent(CATALOG_FILTERS), "Filters are missing.");
+        Assertions.assertFalse(baseFunc.isElementPresent(HEADER), "Header is not present.");
+        Assertions.assertFalse(baseFunc.isElementPresent(FOOTER), "Footer is not present.");
     }
 
     public void pushOrange() {
